@@ -193,6 +193,13 @@ Gizmo {
     t "Copies the current render/proxy path to the clipboard"
     -STARTLINE
  }
+ addUserKnob {
+    22 tk_grit_read_from_write
+    l "Read from Write"
+    T "import nuke\ntry:\n    import grit_writenode_read\nexcept ImportError:\n    nuke.message('Read from Write is only available when Nuke is launched from the GRIT Flow config.')\nelse:\n    grit_writenode_read.read_from_write(nuke.thisNode())"
+    t "GRIT: creates a Read node of the frames this node rendered (workfiles first, then publish)."
+    -STARTLINE
+ }
 
  addUserKnob {
     26 ""
